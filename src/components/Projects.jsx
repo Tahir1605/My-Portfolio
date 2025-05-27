@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import weatherImg from './assets/images/Weather-App.png';
+import searchImg from './assets/images/Image-Search.png';
+import quizImg from './assets/images/Quiz-App.png';
 
 
 const projectData = [
@@ -12,7 +15,7 @@ const projectData = [
       "A weather app built with React.js that uses a Weather API to display real-time weather data. Features include an attractive UI with toggleable dark and light themes for better usability.",
     githubLink: "https://github.com/Tahir1605/weather-app.git", // Replace with actual GitHub link
     projectLink: "https://tahir1605.github.io/weather-app/", // Replace with actual live project link
-    image:process.env.PUBLIC_URL+"/images/Weather-App.png",
+    image:weatherImg,
   },
   {
     name: "Image Search App",
@@ -22,7 +25,7 @@ const projectData = [
       "An image search app built with React.js using the Unsplash API, featuring an attractive, responsive UI with seamless dark and light theme toggling for an enhanced user experience.",
     githubLink: "https://github.com/Tahir1605/image-search.git",
     projectLink: "https://tahir1605.github.io/image-search/",
-    image:process.env.PUBLIC_URL+"/images/Image-Search.png",
+    image:searchImg,
   },
   {
     name: "Quiz App",
@@ -32,7 +35,7 @@ const projectData = [
       "A quiz app developed with React.js that fetches questions from an API, featuring an engaging and user-friendly interface with real-time scoring and smooth navigation for an interactive learning experience.",
     githubLink: "https://github.com/Tahir1605/Quize-app.git",
     projectLink: "https://tahir1605.github.io/Quize-app/",
-    image:process.env.PUBLIC_URL+"/images/Quiz-App.png",
+    image:quizImg,
   },
 ];
 
