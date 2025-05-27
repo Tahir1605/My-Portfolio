@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import WeatherAppImg from '../assets/images/Weather-App.png';
-import ImageSearchImg from '../assets/images/Image-Search.png';
-import QuizAppImg from '../assets/images/Quiz-App.png';
+import WeatherAppImg from '../public/images/Weather-App.png';
+import ImageSearchImg from '../public/images/Image-Search.png';
+import QuizAppImg from '../public/images/Quiz-App.png';
 
 
 const projectData = [
