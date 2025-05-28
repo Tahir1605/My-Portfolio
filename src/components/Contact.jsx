@@ -9,7 +9,7 @@ const Contact = () => {
       className="px-4 sm:px-6 md:px-16 py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-950 dark:to-gray-950"
     >
       <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-center text-blue-700 dark:text-blue-400 mb-10"
+        className="text-4xl sm:text-5xl font-extrabold text-center text-blue-700 dark:text-blue-400 mb-12"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -18,40 +18,41 @@ const Contact = () => {
       </motion.h2>
 
       <motion.div
-        className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl"
+        className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-xl"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         <form className="flex flex-col gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your full name"
-              autoComplete="password"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="you@example.com"
-              autoComplete="off"
-              required
-            />
-          </div>
+          {[
+            {
+              label: "Name",
+              name: "name",
+              type: "text",
+              placeholder: "Your full name",
+            },
+            {
+              label: "Email",
+              name: "email",
+              type: "email",
+              placeholder: "you@example.com",
+            },
+          ].map((field, index) => (
+            <div key={index}>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                {field.label}
+              </label>
+              <input
+                type={field.type}
+                name={field.name}
+                className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder={field.placeholder}
+                autoComplete="off"
+                required
+              />
+            </div>
+          ))}
 
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -62,7 +63,6 @@ const Contact = () => {
               rows="5"
               className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Write your message here..."
-              autoComplete="off"
               required
             ></textarea>
           </div>
@@ -78,27 +78,27 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      {/* Social Icons */}
+      {/* Social Links */}
       <motion.div
-        className="mt-12 flex justify-center gap-8"
+        className="mt-10 flex justify-center gap-8 text-blue-700 dark:text-blue-400 text-2xl"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <a
-          href="https://github.com/Tahir1605" // Replace later
+          href="https://github.com/Tahir1605"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-3xl text-gray-800 dark:text-white hover:text-blue-600 transition"
+          aria-label="GitHub"
         >
           <FaGithub />
         </a>
         <a
-          href="https://www.linkedin.com/in/tahirul-islam-94030332a/" // Replace later
+          href="https://linkedin.com/in/your-linkedin-id"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-3xl text-gray-800 dark:text-white hover:text-blue-600 transition"
+          aria-label="LinkedIn"
         >
           <FaLinkedin />
         </a>
