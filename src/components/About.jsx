@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative px-4 sm:px-6 md:px-16 py-16 sm:py-24 bg-gradient-to-b from-blue-50 to-white dark:from-gray-950 dark:via-gray-950 dark:to-gray-950 text-black dark:text-white overflow-hidden"
+      className="relative px-4 sm:px-6 md:px-16 py-16 sm:py-24 bg-gradient-to-b from-blue-50 to-blue-50 dark:from-gray-950 dark:via-gray-950 dark:to-gray-950 text-black dark:text-white overflow-hidden"
     >
       <motion.h2
         className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-16 text-blue-700 dark:text-blue-400"

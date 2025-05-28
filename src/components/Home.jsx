@@ -31,21 +31,22 @@ function Home() {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-64px)] flex items-center bg-white dark:bg-gray-950 dark:text-white text-black px-4 sm:px-6 md:px-16 overflow-hidden"
+      className="relative min-h-[calc(100vh-64px)] flex items-center bg-blue-50 dark:bg-gray-950 dark:text-white text-black overflow-hidden"
     >
-      {/* Motion Background Blob */}
+      {/* Background Blob */}
       <motion.div
         className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-blue-600 rounded-full filter blur-3xl opacity-20 dark:opacity-10 z-0"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 10, repeat: Infinity }}
       ></motion.div>
 
-      <div className="relative flex flex-col-reverse md:flex-row items-center justify-between w-full gap-12 py-12 sm:py-16 z-10">
+      {/* Main Content Container */}
+      <div className="relative flex flex-col-reverse md:flex-row items-center justify-between w-full gap-10 px-4 sm:px-8 py-10 sm:py-12 md:py-16 lg:py-20 xl:py-16 2xl:py-14 z-10 max-w-7xl mx-auto">
 
         {/* Left Section */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -63,7 +64,7 @@ function Home() {
             <AnimatePresence mode="wait">
               <motion.h2
                 key={roles[index]}
-                className="absolute text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300 w-full"
+                className="absolute text-base xs:text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300 w-full"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -40 }}
@@ -100,7 +101,7 @@ function Home() {
           </motion.a>
         </div>
 
-        {/* Right Section (Animated Blob with Icons) */}
+        {/* Right Section */}
         <motion.div
           className="w-full md:w-1/2 flex justify-center items-center relative"
           initial={{ opacity: 0, scale: 0.9 }}
