@@ -14,7 +14,7 @@ function App() {
       <Navbar />
 
       {/* Main Content (push down content to make room for fixed navbar) */}
-      <div className='pt-20 sm:px-8'>
+      <div className='pt-16 sm:pt-20 sm:px-8'>
         <div className='bg-slate-200 dark:bg-gray-950 rounded-lg shadow-lg sm:p-6'>
           <section id='home'><Home /></section>
           <section id='about'><About /></section>
