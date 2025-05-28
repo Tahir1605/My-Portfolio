@@ -9,8 +9,10 @@ import {
   FaGithub,
   FaDatabase,
   FaGitAlt,
+  FaReact,
+  FaNodeJs,
 } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiMysql } from 'react-icons/si';
+import { SiTailwindcss, SiMongodb, SiMysql, SiExpress } from 'react-icons/si';
 
 const skills = [
   { name: 'HTML5', icon: <FaHtml5 className="text-orange-600" /> },
@@ -23,6 +25,9 @@ const skills = [
   { name: 'MongoDB', icon: <SiMongodb className="text-green-600" /> },
   { name: 'Git', icon: <FaGitAlt className="text-orange-500" /> },
   { name: 'GitHub', icon: <FaGithub className="text-black dark:text-white" /> },
+  { name: 'React JS', icon: <FaReact className="text-cyan-400" /> },
+  { name: 'Node JS', icon: <FaNodeJs className="text-green-600" /> },
+  { name: 'Express JS', icon: <SiExpress className="text-gray-800 dark:text-gray-200" /> },
 ];
 
 const Skills = () => {
@@ -37,7 +42,7 @@ const Skills = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-       My Skills
+        My Skills
       </motion.h2>
 
       <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-10">
@@ -51,7 +56,9 @@ const Skills = () => {
             transition={{ delay: index * 0.1 }}
           >
             <div className="text-5xl mb-3">{skill.icon}</div>
-            <p className="text-center text-gray-800 dark:text-gray-200 text-sm sm:text-base font-medium">{skill.name}</p>
+            <p className="text-center text-gray-800 dark:text-gray-200 text-sm sm:text-base font-medium">
+              {skill.name}
+            </p>
           </motion.div>
         ))}
       </div>
