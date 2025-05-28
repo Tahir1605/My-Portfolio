@@ -1,8 +1,48 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_vtu3n1w",
+        "template_0cbe92d",
+        e.target,
+        "s3gDbSsghjxWtsPcO"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          Swal.fire({
+            icon: "success",
+            title: "Message Sent!",
+            text: "Your message has been successfully sent.",
+            background: "#f0f4ff",
+            color: "#333",
+            iconColor: "#3085d6",
+            showConfirmButton: false,
+            timer: 2500,
+            backdrop: `rgba(0,0,123,0.4)`,
+          });
+        },
+        (error) => {
+          console.log(error.text);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Failed to send message. Please try again later.",
+          });
+        }
+      );
+
+    e.target.reset();
+  };
+
   return (
     <section
       id="contact"
@@ -24,21 +64,12 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <form className="flex flex-col gap-6">
-          {[
-            {
-              label: "Name",
-              name: "name",
-              type: "text",
-              placeholder: "Your full name",
-            },
-            {
-              label: "Email",
-              name: "email",
-              type: "email",
-              placeholder: "you@example.com",
-            },
-          ].map((field, index) => (
+        <form className="flex flex-col gap-6" onSubmit={sendEmail} autoComplete="off">
+          {[{
+            label: "Name", name: "name", type: "text", placeholder: "Your full name",
+          }, {
+            label: "Email", name: "email", type: "email", placeholder: "you@example.com",
+          }].map((field, index) => (
             <div key={index}>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 {field.label}
@@ -48,7 +79,7 @@ const Contact = () => {
                 name={field.name}
                 className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder={field.placeholder}
-                autoComplete="off"
+                autoComplete={field.name === "name" ? "new-name" : "off"}
                 required
               />
             </div>
@@ -78,7 +109,6 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      {/* Social Links */}
       <motion.div
         className="mt-10 flex justify-center gap-8 text-blue-700 dark:text-blue-400 text-2xl"
         initial={{ opacity: 0, y: 40 }}
@@ -86,20 +116,10 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <a
-          href="https://github.com/Tahir1605"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-        >
+        <a href="https://github.com/Tahir1605" target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
-        <a
-          href="https://linkedin.com/in/your-linkedin-id"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
+        <a href="https://www.linkedin.com/in/tahirul-islam-94030332a/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
       </motion.div>
