@@ -4,7 +4,9 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import weatherImg from '../assets/Weather-App.png';
 import searchImg from '../assets/Image-Search.png';
 import quizImg from '../assets/Quiz-App.png';
-
+import ECommerce from '../assets/E-Commerce.png';
+import Blog from '../assets/Quick-BlogApp.png';
+import ChatApp from '../assets/Quick-ChatApp.png'
 
 const projectData = [
   {
@@ -36,6 +38,36 @@ const projectData = [
     githubLink: "https://github.com/Tahir1605/Quize-app.git",
     projectLink: "https://tahir1605.github.io/Quize-app/",
     image:quizImg,
+  },
+  {
+    name: "ECommerce App",
+    startDate: "2025-05-10",
+    endDate: "2025-05-20",
+    description:
+      "It is a fully functional eCommerce website using the MERN stack, featuring product listings, user authentication, and a comprehensive admin panel for managing products, orders, and users with full CRUD operations.",
+    githubLink: "https://github.com/Tahir1605/MERN-ECommerce.git",
+    projectLink: "https://ecommerce-frontend-ten-sooty.vercel.app/login",
+    image:ECommerce,
+  },
+  {
+    name: "Blog App",
+    startDate: "2025-05-22",
+    endDate: "2025-05-31",
+    description:
+      "It is a dynamic blog website using the MERN stack, featuring user authentication, blog creation and management, and a robust admin panel to handle posts, comments, categories, and user roles with full CRUD functionality.",
+    githubLink: "https://github.com/Tahir1605/MERN-Blog-App.git",
+    projectLink: "https://mern-blog-app-fawn.vercel.app/",
+    image:Blog,
+  },
+  {
+    name: "Chat App",
+    startDate: "2025-06-02",
+    endDate: "2025-06-10",
+    description:
+      "It is a real-time chat website using the MERN stack and Socket.io, featuring user authentication, one-on-one messaging, typing indicators, and online status updates for a smooth and interactive chatting experience.",
+    githubLink: "https://github.com/Tahir1605/MERN-ChatApp.git",
+    projectLink: "https://mern-chat-app-brown-alpha.vercel.app/login",
+    image:ChatApp,
   },
 ];
 
