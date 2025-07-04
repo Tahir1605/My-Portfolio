@@ -4,7 +4,7 @@ This is a minimal setup for a React project using Vite, with support for HMR (Ho
 
 ## My Portfolio Website
 
-![Project Screenshot](./screenshot.png)
+![Project Screenshot](/screenshot.png)
 
 
 ## 📌 Project Description
