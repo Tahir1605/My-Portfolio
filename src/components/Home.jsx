@@ -101,44 +101,32 @@ function Home() {
           </motion.a>
         </div>
 
-        {/* Right Section */}
+        {/* Right Section with Animated Image */}
         <motion.div
           className="w-full md:w-1/2 flex justify-center items-center relative"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {/* Animated Blob */}
+          {/* Glowing Light Background */}
           <motion.div
-            className="w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-2xl opacity-30 animate-pulse"
-            animate={{ scale: [1, 1.05, 1] }}
+            className="absolute w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 blur-3xl opacity-30"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
             transition={{ duration: 6, repeat: Infinity }}
           />
 
-          {/* Floating Icons */}
-          <div className="absolute flex flex-col items-center gap-6 text-white">
-            <motion.div
-              className="bg-blue-600 p-4 rounded-full shadow-lg"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <i className="devicon-react-original text-3xl"></i>
-            </motion.div>
-            <motion.div
-              className="bg-cyan-600 p-4 rounded-full shadow-lg"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-            >
-              <i className="devicon-nodejs-plain text-3xl"></i>
-            </motion.div>
-            <motion.div
-              className="bg-blue-700 p-4 rounded-full shadow-lg"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3, delay: 0.4 }}
-            >
-              <i className="devicon-javascript-plain text-3xl"></i>
-            </motion.div>
-          </div>
+          {/* Profile Image with Floating Effect */}
+          <motion.div
+            className="relative z-10 rounded-full overflow-hidden border-[6px] border-white shadow-2xl"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          >
+            <img
+              src="tahir.jpg" // Replace with your image path
+              alt="Tahirul Islam"
+              className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-cover rounded-full"
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>
